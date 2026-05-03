@@ -103,8 +103,6 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" unique_id=1205173757]
 script = ExtResource("1_cvnsp")
-speed = 5
-jump_power = 5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
 position = Vector2(144, 424)
@@ -123,12 +121,14 @@ texture = SubResource("CompressedTexture2D_v0iea")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=637213514 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
-root_node = NodePath("../Camera2D")
+[node name="PlayerAnimator" type="Node" parent="Sprite2D" unique_id=2085096759 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
+script = ExtResource("2_cvnsp")
+player_controller = NodePath("../..")
+animation_player = NodePath("AnimationPlayer")
+sprite = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/PlayerAnimator" unique_id=637213514]
+root_node = NodePath("../../../Camera2D")
 libraries/ = SubResource("AnimationLibrary_vgqql")
 autoplay = &"Ideal"
-speed_scale = 1.8
-script = ExtResource("2_cvnsp")
-player_controller = NodePath("..")
-animation_player = NodePath(".")
-sprite = NodePath("../Sprite2D")
+speed_scale = 1.4

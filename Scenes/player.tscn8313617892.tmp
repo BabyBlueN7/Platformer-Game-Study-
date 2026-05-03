@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://hl2pjyh382df"]
 
 [ext_resource type="Script" uid="uid://c6ct41irtx8j" path="res://Scripts/player_controller.gd" id="1_cvnsp"]
-[ext_resource type="Script" uid="uid://crjp7um7ie7cr" path="res://Scripts/player_animator.gd" id="2_cvnsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0iea"]
 size = Vector2(12.4398, 14.133408)
@@ -15,7 +14,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:region_rect")
+tracks/0/path = NodePath("../PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +32,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:region_rect")
+tracks/0/path = NodePath("../PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,7 +48,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:region_rect")
+tracks/0/path = NodePath("../PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -67,7 +66,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:region_rect")
+tracks/0/path = NodePath("../PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -82,7 +81,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:region_rect")
+tracks/0/path = NodePath("../PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -103,32 +102,28 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" unique_id=1205173757]
 script = ExtResource("1_cvnsp")
-speed = 5
-jump_power = 5
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
-position = Vector2(144, 424)
-offset = Vector2(0, -15)
-zoom = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1269919495]
 position = Vector2(99, 437)
 scale = Vector2(0.96464527, 0.99056184)
 shape = SubResource("RectangleShape2D_v0iea")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=662032133]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
+position = Vector2(144, 424)
+offset = Vector2(0, -15)
+zoom = Vector2(5, 5)
+
+[node name="PlayerAnimator" type="Node" parent="." unique_id=2085096759]
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerAnimator" unique_id=662032133]
 position = Vector2(100, 435.99997)
 scale = Vector2(1, 1.0000004)
 texture = SubResource("CompressedTexture2D_v0iea")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=637213514 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
-root_node = NodePath("../Camera2D")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator" unique_id=637213514]
+root_node = NodePath("../../Camera2D")
 libraries/ = SubResource("AnimationLibrary_vgqql")
 autoplay = &"Ideal"
-speed_scale = 1.8
-script = ExtResource("2_cvnsp")
-player_controller = NodePath("..")
-animation_player = NodePath(".")
-sprite = NodePath("../Sprite2D")
+speed_scale = 1.4
