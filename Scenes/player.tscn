@@ -110,6 +110,9 @@ jump_power = 5
 position = Vector2(144, 424)
 offset = Vector2(0, -15)
 zoom = Vector2(5, 5)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1269919495]
 position = Vector2(99, 437)
