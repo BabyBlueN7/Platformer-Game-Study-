@@ -102,9 +102,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1205173757]
+collision_mask = 768
 script = ExtResource("1_cvnsp")
-speed = 5
-jump_power = 5
+jump_power = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
 position = Vector2(144, 424)
