@@ -17,6 +17,8 @@ size = Vector2(32, 4)
 position = Vector2(6, -8)
 curve = SubResource("Curve2D_fy76j")
 script = ExtResource("1_wegd7")
+ease = 2
+transition = 4
 path_follow_2D = NodePath("PathFollow2D")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=322567788]
