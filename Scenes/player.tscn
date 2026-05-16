@@ -102,7 +102,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1205173757]
-collision_mask = 768
+collision_mask = 769
 script = ExtResource("1_cvnsp")
 jump_power = 20.0
 

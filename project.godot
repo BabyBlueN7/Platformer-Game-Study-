@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game 2"
-run/main_scene="res://Scenes/Areas/area_1.tscn"
+run/main_scene="uid://djng7kba3gspx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://cvgcnwjr4d1gj"
 
