@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bqjvui1acjny7" path="res://Texture/tiles_1.png" id="1_40dhv"]
 [ext_resource type="PackedScene" uid="uid://hl2pjyh382df" path="res://Scenes/player.tscn" id="2_740e3"]
+[ext_resource type="PackedScene" uid="uid://y0qmxkhb461y" path="res://Scenes/Area Functionality/area_exit.tscn" id="3_twvbk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng53c"]
 texture = ExtResource("1_40dhv")
@@ -347,3 +348,6 @@ jump_power = 8.0
 
 [node name="InvisibleWall" type="StaticBody2D" parent="." unique_id=817417049]
 collision_mask = 0
+
+[node name="AreaExit" parent="." unique_id=1586328369 instance=ExtResource("3_twvbk")]
+position = Vector2(144, 424)

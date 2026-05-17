@@ -119,3 +119,6 @@ transition = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall" parent_id_path=PackedInt32Array(817417049) index="0" unique_id=1047973916]
 position = Vector2(5147, 886.8544)
 shape = SubResource("RectangleShape2D_ng53c")
+
+[node name="AreaExit" parent="." index="4" unique_id=1586328369]
+position = Vector2(5112, 1000)
