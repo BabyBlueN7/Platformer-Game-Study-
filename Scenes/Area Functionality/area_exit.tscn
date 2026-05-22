@@ -14,6 +14,7 @@ build_mode = 1
 polygon = PackedVector2Array(1, -15.999998, 1, -15.999998, 5, -3.9999995, 6, -1.9999998, 4, 1.9999998, 6, 4.9999995, 5, 7.999999, 2, 11.999998, 0, 19.999998, -2, 12.999998, -3, 9.999999, -3, 7.999999, -5, 0.9999999, -2, -9.999999)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069479534]
+z_index = -20
 position = Vector2(0, -2.2737368e-13)
 scale = Vector2(0.024453554, 0.024453558)
 texture = ExtResource("1_03o3b")

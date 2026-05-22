@@ -95,7 +95,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vgqql"]
 _data = {
 &"Fall": SubResource("Animation_vgqql"),
-&"Ideal": SubResource("Animation_cvnsp"),
+&"Idle": SubResource("Animation_cvnsp"),
 &"Jump": SubResource("Animation_fkybt"),
 &"Move": SubResource("Animation_v0iea"),
 &"RESET": SubResource("Animation_6t5aa")
@@ -104,7 +104,8 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=1205173757]
 collision_mask = 769
 script = ExtResource("1_cvnsp")
-jump_power = 20.0
+speed = 4.5
+jump_power = 8.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
 position = Vector2(144, 424)
@@ -129,7 +130,7 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=637213514 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 root_node = NodePath("../Camera2D")
 libraries/ = SubResource("AnimationLibrary_vgqql")
-autoplay = &"Ideal"
+autoplay = &"Idle"
 speed_scale = 1.968
 script = ExtResource("2_cvnsp")
 player_controller = NodePath("..")
