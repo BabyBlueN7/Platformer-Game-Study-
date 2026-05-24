@@ -1,22 +1,25 @@
 [gd_scene format=3 uid="uid://y0qmxkhb461y"]
 
-[ext_resource type="Texture2D" uid="uid://ds82dvkgli0yc" path="res://Texture/Exit.png" id="1_03o3b"]
 [ext_resource type="Script" uid="uid://d0h82vy1lwn1i" path="res://Scripts/area_exit.gd" id="1_vjwtd"]
+[ext_resource type="Texture2D" uid="uid://dm80v0fshwol6" path="res://Texture/portal.png" id="2_vjwtd"]
 
-[node name="AreaExit" type="Area2D" unique_id=2140237144]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewrji"]
+radius = 8.0
+
+[node name="AreaExit" type="Area2D" unique_id=2140237144 node_paths=PackedStringArray("sprite") groups=["area_exits"]]
 collision_layer = 65536
 script = ExtResource("1_vjwtd")
+sprite = NodePath("Sprite2D")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=809297405]
-position = Vector2(0, 5.421011e-20)
-scale = Vector2(1, 1.0000002)
-build_mode = 1
-polygon = PackedVector2Array(1, -15.999998, 1, -15.999998, 5, -3.9999995, 6, -1.9999998, 4, 1.9999998, 6, 4.9999995, 5, 7.999999, 2, 11.999998, 0, 19.999998, -2, 12.999998, -3, 9.999999, -3, 7.999999, -5, 0.9999999, -2, -9.999999)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218016304]
+shape = SubResource("CircleShape2D_ewrji")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069479534]
 z_index = -20
-position = Vector2(0, -2.2737368e-13)
-scale = Vector2(0.024453554, 0.024453558)
-texture = ExtResource("1_03o3b")
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.8388323, 0.8388323)
+texture = ExtResource("2_vjwtd")
+region_enabled = true
+region_rect = Rect2(22, 0, 22, 22)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

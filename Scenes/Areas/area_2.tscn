@@ -9,3 +9,12 @@ layer_1/tile_data = PackedInt32Array(2555913, 65536, 6, 2490377, 65536, 5, 24248
 
 [node name="AreaExit" parent="." index="4" unique_id=1586328369]
 position = Vector2(880, 400)
+
+[node name="EnergyCell" parent="EnergyCells" parent_id_path=PackedInt32Array(222413011) index="0" unique_id=1681074975]
+position = Vector2(184, 432)
+
+[node name="EnergyCell2" parent="EnergyCells" parent_id_path=PackedInt32Array(222413011) index="1" unique_id=212889460]
+position = Vector2(472, 352)
+
+[node name="EnergyCell3" parent="EnergyCells" parent_id_path=PackedInt32Array(222413011) index="2" unique_id=2120289998]
+position = Vector2(760, 408)
