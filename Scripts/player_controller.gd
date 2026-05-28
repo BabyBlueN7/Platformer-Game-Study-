@@ -57,7 +57,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func teleport_to_location(new_location):
-	camera.position_smoothing_enabled = false
 	position = new_location
-	await get_tree().physics_frame
-	camera.position_smoothing_enabled = true
+	camera.reset_smoothing()

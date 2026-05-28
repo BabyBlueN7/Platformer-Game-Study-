@@ -2,12 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://hl2pjyh382df" path="res://Scenes/player.tscn" id="1_hf1ha"]
 [ext_resource type="PackedScene" uid="uid://cl0ep74w3spae" path="res://Scenes/UI/hud.tscn" id="1_wbxth"]
+[ext_resource type="PackedScene" uid="uid://di1l4dnmf6vpo" path="res://Scenes/stopwatch.tscn" id="2_m34ki"]
 
 [node name="Gameplay" type="Node2D" unique_id=1378857908]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009314414]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1729850713 instance=ExtResource("1_wbxth")]
+
+[node name="Stopwatch" parent="." unique_id=569357057 instance=ExtResource("2_m34ki")]
 
 [node name="Player" parent="." unique_id=1205173757 instance=ExtResource("1_hf1ha")]
 

@@ -1,5 +1,7 @@
 extends Node
 
+signal area_started
+
 var starting_area = 1
 var current_area = 1
 var area_path = "res://Scenes/Areas/"
@@ -38,6 +40,7 @@ func load_area(area_number):
 	#moving player to the star position of the new scene
 	var player_start_position = get_tree().get_first_node_in_group("player_start_position") as Node2D
 	player.teleport_to_location(player_start_position.position)
+	area_started.emit()
 
 func add_energy_cells():
 	energy_cells += 1
