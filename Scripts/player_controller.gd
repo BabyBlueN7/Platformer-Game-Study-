@@ -3,6 +3,7 @@ class_name PlayerController
 
 @export var speed: float = 10.0
 @export var jump_power: float = 10.0
+@export var camera : Camera2D
 @export var gravity: float = 980.0   # custom gravity for the character
 @export var jump_buffer_time: float = 0.1
 @export var coyote_time: float = 0.1
@@ -54,3 +55,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 
 	move_and_slide()
+
+func teleport_to_location(new_location):
+	camera.position_smoothing_enabled = false
+	position = new_location
+	await get_tree().physics_frame
+	camera.position_smoothing_enabled = true

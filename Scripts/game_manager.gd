@@ -1,31 +1,53 @@
 extends Node
 
+var starting_area = 1
 var current_area = 1
 var area_path = "res://Scenes/Areas/"
 
 var energy_cells = 0
+var area_container : Node2D
+var player : PlayerController
+var hud : HUD
 
 func _ready():
-	reset_energy_cells()
+	hud = get_tree().get_first_node_in_group("hud")
+	area_container = get_tree().get_first_node_in_group("area_container")
+	player = get_tree().get_first_node_in_group("player")
+	load_area(starting_area)
 
 
 
-func next_level():
+func next_area():
 	current_area += 1
+	load_area(current_area)
+
+func load_area(area_number): 
+	#Checking the new scene path
 	var full_path = area_path + "area_" + str(current_area) + ".tscn"
-	get_tree().change_scene_to_file(full_path)
-	print("The Player is moved to area " + str(current_area))
-	set_up_area()
-
-
-func set_up_area():
+	var scene = load(full_path) as PackedScene
+	if !scene:
+		return
+	#removing previous scene
+	for child in area_container.get_children(): 
+		child.queue_free()
+		await child.tree_exited
+	# Setting up the new scene
+	var instance = scene.instantiate()
+	area_container.add_child(instance)
 	reset_energy_cells()
+	#moving player to the star position of the new scene
+	var player_start_position = get_tree().get_first_node_in_group("player_start_position") as Node2D
+	player.teleport_to_location(player_start_position.position)
 
 func add_energy_cells():
 	energy_cells += 1
+	hud.update_energy_cell_label(energy_cells)
 	if energy_cells >= 3:
 		var portal = get_tree().get_first_node_in_group("area_exits") as AreaExit
 		portal.open()
+		hud.portal_opened()
 
 func reset_energy_cells():
 	energy_cells = 0
+	hud.update_energy_cell_label(energy_cells)
+	hud.portal_closed()

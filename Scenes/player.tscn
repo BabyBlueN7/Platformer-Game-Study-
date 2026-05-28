@@ -101,14 +101,15 @@ _data = {
 &"RESET": SubResource("Animation_6t5aa")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1205173757]
+[node name="Player" type="CharacterBody2D" unique_id=1205173757 node_paths=PackedStringArray("camera") groups=["player"]]
 collision_mask = 769
 script = ExtResource("1_cvnsp")
 speed = 4.5
 jump_power = 8.0
+camera = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
-position = Vector2(144, 424)
+position = Vector2(45, -13)
 offset = Vector2(0, -15)
 zoom = Vector2(5, 5)
 process_callback = 0
@@ -116,12 +117,12 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1269919495]
-position = Vector2(99, 437)
+position = Vector2(0, -3.7908554e-05)
 scale = Vector2(0.96464527, 0.99056184)
 shape = SubResource("RectangleShape2D_v0iea")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=662032133]
-position = Vector2(100, 435.99997)
+position = Vector2(1, -1.0000305)
 scale = Vector2(1, 1.0000004)
 texture = SubResource("CompressedTexture2D_v0iea")
 region_enabled = true

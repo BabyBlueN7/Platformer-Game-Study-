@@ -18,4 +18,4 @@ func close():
 
 func _on_body_entered(body):
 	if is_open && body is PlayerController:
-		GameManager.next_level()
+		GameManager.next_area()
