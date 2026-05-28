@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://hl2pjyh382df" path="res://Scenes/player.tscn" id="1_hf1ha"]
 [ext_resource type="PackedScene" uid="uid://cl0ep74w3spae" path="res://Scenes/UI/hud.tscn" id="1_wbxth"]
 [ext_resource type="PackedScene" uid="uid://di1l4dnmf6vpo" path="res://Scenes/stopwatch.tscn" id="2_m34ki"]
+[ext_resource type="Script" uid="uid://c015q3b8hbpfe" path="res://Scripts/audio_manager.gd" id="4_1qnfl"]
+[ext_resource type="AudioStream" uid="uid://cbqlyhk4jbuvr" path="res://Audio/Jewel.mp3" id="4_r8bcl"]
+[ext_resource type="AudioStream" uid="uid://lm62go24ox4f" path="res://Audio/Portal Open.wav" id="5_rlidi"]
+[ext_resource type="AudioStream" uid="uid://dm3mth5yteysn" path="res://Audio/jump.MP3" id="7_1qnfl"]
+[ext_resource type="AudioStream" uid="uid://cwphj5xljnjpl" path="res://Audio/footstep_concrete_002.ogg" id="8_urrcd"]
+[ext_resource type="AudioStream" uid="uid://bmb0e47y14mys" path="res://Audio/impactWood_heavy_001.ogg" id="9_puebw"]
 
 [node name="Gameplay" type="Node2D" unique_id=1378857908]
 
@@ -13,5 +19,30 @@
 [node name="Stopwatch" parent="." unique_id=569357057 instance=ExtResource("2_m34ki")]
 
 [node name="Player" parent="." unique_id=1205173757 instance=ExtResource("1_hf1ha")]
+
+[node name="AudioManager" type="Node" parent="." unique_id=1976354974 groups=["audio_manager"]]
+script = ExtResource("4_1qnfl")
+
+[node name="EnergyCellPickupSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=436716792]
+stream = ExtResource("4_r8bcl")
+volume_db = -8.525
+
+[node name="PortalOpenSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=564767459]
+stream = ExtResource("5_rlidi")
+volume_db = -8.327
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=1308052333]
+stream = ExtResource("7_1qnfl")
+volume_db = -1.5
+pitch_scale = 3.5
+
+[node name="WalkingSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=1754677223]
+stream = ExtResource("8_urrcd")
+volume_db = -10.0
+pitch_scale = 0.45
+
+[node name="LandSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=1096625309]
+stream = ExtResource("9_puebw")
+volume_db = -5.899
 
 [node name="Area" type="Node2D" parent="." unique_id=58399073 groups=["area_container"]]

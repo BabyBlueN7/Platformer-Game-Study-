@@ -14,11 +14,13 @@ var direction = 0
 
 var jump_buffer_timer: float = 0.0
 var coyote_timer: float = 0.0
+var was_on_floor = true
 
 func _input(event):
 	# Handle jump input buffering
 	if event.is_action_pressed("JUMP"):
 		jump_buffer_timer = jump_buffer_time
+
 
 	# Handle down jump
 	if event.is_action_pressed("DOWN"):
@@ -46,6 +48,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jump_power * jump_multiplier
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
+		var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
+		if audio_manager:
+			audio_manager.play_jump()
 
 	# Horizontal movement
 	direction = Input.get_axis("LEFT", "RIGHT")
@@ -55,6 +60,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 
 	move_and_slide()
+
+	# Walking sound logic
+	var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
+	if audio_manager:
+		if is_on_floor() and abs(velocity.x) > 0.1:
+			audio_manager.start_walking()
+		else:
+			audio_manager.stop_walking()
+
+ 	# Landing sound trigger
+	if not was_on_floor and is_on_floor() and Engine.get_frames_drawn() > 1:
+		audio_manager.play_land()
+	was_on_floor = is_on_floor()
+
 
 func teleport_to_location(new_location):
 	position = new_location

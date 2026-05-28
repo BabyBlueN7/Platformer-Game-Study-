@@ -11,7 +11,7 @@ func _process(delta):
 	if stopped:
 		return
 	time += delta
-
+	
 func reset():
 	time = 0.0
 

@@ -22,3 +22,7 @@ func _process(delta):
 		animation_player.play("Jump")
 	elif player_controller.velocity.y > 0.0:
 		animation_player.play("Fall")
+
+# Landing sound
+func play_land():
+	$LandSound.play()

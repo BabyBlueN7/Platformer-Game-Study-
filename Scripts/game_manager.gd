@@ -42,12 +42,17 @@ func load_area(area_number):
 	player.teleport_to_location(player_start_position.position)
 	area_started.emit()
 
+#energy cell pickup
 func add_energy_cells():
 	energy_cells += 1
 	hud.update_energy_cell_label(energy_cells)
+	var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
+	audio_manager.play_energy_cell_pickup()
+
 	if energy_cells >= 3:
 		var portal = get_tree().get_first_node_in_group("area_exits") as AreaExit
 		portal.open()
+		audio_manager.play_portal_open()
 		hud.portal_opened()
 
 func reset_energy_cells():
