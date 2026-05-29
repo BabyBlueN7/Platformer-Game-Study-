@@ -107,6 +107,9 @@ script = ExtResource("1_cvnsp")
 speed = 4.5
 jump_power = 8.0
 camera = NodePath("Camera2D")
+gravity = null
+jump_buffer_time = null
+coyote_time = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
 position = Vector2(45, -13)

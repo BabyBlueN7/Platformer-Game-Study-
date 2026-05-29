@@ -65,6 +65,7 @@ DOWN={
 2d_physics/layer_9="ground"
 2d_physics/layer_10="one_way_ground"
 2d_physics/layer_17="transitions"
+2d_physics/layer_18="death_zone"
 
 [physics]
 

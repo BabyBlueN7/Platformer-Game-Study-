@@ -117,7 +117,10 @@ curve = SubResource("Curve2D_7fadb")
 path_time = 0.3
 transition = 8
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="InvisibleWall" parent_id_path=PackedInt32Array(817417049) index="1" unique_id=1047973916]
+[node name="InvisibleWall" parent="." index="3" unique_id=817417049]
+collision_mask = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InvisibleWall" index="1" unique_id=1047973916]
 position = Vector2(5120, 888)
 shape = SubResource("RectangleShape2D_ng53c")
 
@@ -136,3 +139,6 @@ position = Vector2(2088, 995)
 
 [node name="EnergyCell3" parent="EnergyCells" parent_id_path=PackedInt32Array(222413011) index="2" unique_id=2120289998]
 position = Vector2(2685, 1056)
+
+[node name="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="0" unique_id=1855279603]
+position = Vector2(928, 488)

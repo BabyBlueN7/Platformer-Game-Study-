@@ -15,6 +15,10 @@ var direction = 0
 var jump_buffer_timer: float = 0.0
 var coyote_timer: float = 0.0
 var was_on_floor = true
+var hud: HUD
+
+func _ready():
+	hud = get_tree().get_first_node_in_group("hud")
 
 func _input(event):
 	# Handle jump input buffering
@@ -78,3 +82,10 @@ func _physics_process(delta: float) -> void:
 func teleport_to_location(new_location):
 	position = new_location
 	camera.reset_smoothing()
+
+func die():
+	# Example: respawn at start position
+	if GameManager.energy_cells == 0:
+		hud.show_restart_button()
+	else:
+		hud.show_restart_and_checkpoint_buttons()

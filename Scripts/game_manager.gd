@@ -10,6 +10,9 @@ var energy_cells = 0
 var area_container : Node2D
 var player : PlayerController
 var hud : HUD
+var checkpoints: Array[Vector2] = []
+var current_checkpoint: Vector2 = Vector2.ZERO
+
 
 func _ready():
 	hud = get_tree().get_first_node_in_group("hud")
@@ -43,11 +46,14 @@ func load_area(area_number):
 	area_started.emit()
 
 #energy cell pickup
-func add_energy_cells():
+func add_energy_cells(cell_position: Vector2):
 	energy_cells += 1
 	hud.update_energy_cell_label(energy_cells)
 	var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
 	audio_manager.play_energy_cell_pickup()
+	# Save checkpoint
+	checkpoints.append(cell_position)
+	current_checkpoint = cell_position
 
 	if energy_cells >= 3:
 		var portal = get_tree().get_first_node_in_group("area_exits") as AreaExit

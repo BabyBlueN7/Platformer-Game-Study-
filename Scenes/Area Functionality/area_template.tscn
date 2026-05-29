@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bqjvui1acjny7" path="res://Texture/tiles_1.png" id="1_40dhv"]
 [ext_resource type="PackedScene" uid="uid://y0qmxkhb461y" path="res://Scenes/Area Functionality/area_exit.tscn" id="3_twvbk"]
 [ext_resource type="PackedScene" uid="uid://c3agh452xyhgp" path="res://Scenes/energy_cell.tscn" id="4_g4kau"]
+[ext_resource type="Script" uid="uid://bqsvhk3jl7g8k" path="res://Scripts/death_zone.gd" id="4_iig0q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng53c"]
 texture = ExtResource("1_40dhv")
@@ -332,6 +333,9 @@ sources/0 = SubResource("TileSetAtlasSource_ng53c")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4kau"]
 size = Vector2(3, 121)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twvbk"]
+size = Vector2(270.5639, 3.5)
+
 [node name="AreaTemplate" type="Node2D" unique_id=1279305082]
 
 [node name="PlayerStartPosition" type="Node2D" parent="." unique_id=720944770 groups=["player_start_position"]]
@@ -367,3 +371,12 @@ position = Vector2(120, 432)
 
 [node name="EnergyCell3" parent="EnergyCells" unique_id=2120289998 instance=ExtResource("4_g4kau")]
 position = Vector2(87, 432)
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=417837194]
+collision_layer = 131072
+script = ExtResource("4_iig0q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1855279603]
+position = Vector2(137, 659)
+shape = SubResource("RectangleShape2D_twvbk")
+debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
