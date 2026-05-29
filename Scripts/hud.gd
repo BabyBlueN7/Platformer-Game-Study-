@@ -57,11 +57,3 @@ func _on_CheckpointButton_pressed():
 func _hide_buttons():
 	RestartButton.visible = false
 	CheckpointButton.visible = false
-
-
-func _on_restart_button_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_checkpoint_button_pressed() -> void:
-	pass # Replace with function body.

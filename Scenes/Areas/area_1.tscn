@@ -63,10 +63,13 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ng53c"]
 size = Vector2(10, 317.70874)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twvbk"]
+size = Vector2(365.4381, 3)
+
 [node name="AreaTemplate" unique_id=1279305082 instance=ExtResource("1_cuj55")]
 
 [node name="PlayerStartPosition" parent="." index="0" unique_id=720944770]
-position = Vector2(72, 432)
+position = Vector2(88, 440)
 
 [node name="TileMap" parent="." index="1" unique_id=939034929]
 layer_0/tile_data = PackedInt32Array(1835051, 65536, 7, 1835052, 65536, 7, 1835053, 65536, 7, 4391179, 0, 3, 4391180, 65536, 3, 4391181, 131072, 3, 4260111, 196608, 3, 4194578, 0, 3, 4194579, 65536, 3, 4194580, 131072, 3, 4522262, 196608, 3, 2031634, 0, 3, 2031635, 65536, 3, 2031636, 65536, 3, 1900565, 0, 3, 2031637, 65536, 3, 1900566, 65536, 3, 2031638, 131072, 3, 1900567, 65536, 3, 1769496, 0, 3, 1900568, 65536, 3, 1769497, 65536, 3, 1900569, 131072, 3, 1769498, 131072, 3, 2228252, 0, 3, 2228253, 131072, 3, 2097178, 131072, 3, 2097177, 0, 3, 4325547, 0, 3, 4325548, 131072, 3, 3145886, 0, 3, 3145887, 65536, 3, 3145888, 65536, 3, 3145889, 131072, 3)
@@ -114,11 +117,14 @@ path_time = 0.4
 position = Vector2(4696, 992)
 scale = Vector2(1, 0.94736844)
 curve = SubResource("Curve2D_7fadb")
-path_time = 0.3
+path_time = 0.35
 transition = 8
 
 [node name="InvisibleWall" parent="." index="3" unique_id=817417049]
 collision_mask = 1
+
+[node name="CollisionShape2D" parent="InvisibleWall" index="0" unique_id=1971438767]
+position = Vector2(1, 379.5)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InvisibleWall" index="1" unique_id=1047973916]
 position = Vector2(5120, 888)
@@ -141,4 +147,19 @@ position = Vector2(2088, 995)
 position = Vector2(2685, 1056)
 
 [node name="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="0" unique_id=1855279603]
-position = Vector2(928, 488)
+position = Vector2(968, 652)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="1" unique_id=2082701153]
+position = Vector2(2472, 966.4158)
+shape = SubResource("RectangleShape2D_twvbk")
+debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="2" unique_id=2117951195]
+position = Vector2(3360, 1560)
+shape = SubResource("RectangleShape2D_twvbk")
+debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="3" unique_id=627550107]
+position = Vector2(4672, 1256)
+shape = SubResource("RectangleShape2D_twvbk")
+debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)

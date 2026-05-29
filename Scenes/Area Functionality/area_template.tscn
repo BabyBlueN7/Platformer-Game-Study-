@@ -334,7 +334,7 @@ sources/0 = SubResource("TileSetAtlasSource_ng53c")
 size = Vector2(3, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twvbk"]
-size = Vector2(270.5639, 3.5)
+size = Vector2(365.4381, 3.8146973e-06)
 
 [node name="AreaTemplate" type="Node2D" unique_id=1279305082]
 
