@@ -4,6 +4,7 @@ signal area_started
 
 var starting_area = 1
 var current_area = 1
+@export var dev_start_area: int = 1
 var area_path = "res://Scenes/Areas/"
 
 var energy_cells = 0
@@ -18,16 +19,15 @@ func _ready():
 	hud = get_tree().get_first_node_in_group("hud")
 	area_container = get_tree().get_first_node_in_group("area_container")
 	player = get_tree().get_first_node_in_group("player")
-	load_area(starting_area)
-
-
+	load_area(dev_start_area)
 
 func next_area():
 	current_area += 1
 	load_area(current_area)
 
 func load_area(area_number): 
-	current_area = area_number # ✅ update current_area
+	#Checking the new scene path
+	current_area = area_number   # keep current_area in sync
 	var full_path = area_path + "area_" + str(area_number) + ".tscn"
 	var scene = load(full_path) as PackedScene
 	if !scene:

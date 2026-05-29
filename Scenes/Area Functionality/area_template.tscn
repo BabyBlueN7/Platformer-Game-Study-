@@ -331,10 +331,10 @@ terrain_set_0/terrain_1/color = Color(0.37254903, 0.16862746, 0, 1)
 sources/0 = SubResource("TileSetAtlasSource_ng53c")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4kau"]
-size = Vector2(3, 121)
+size = Vector2(2, 167)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twvbk"]
-size = Vector2(365.4381, 3.8146973e-06)
+size = Vector2(365.4381, 3)
 
 [node name="AreaTemplate" type="Node2D" unique_id=1279305082]
 
