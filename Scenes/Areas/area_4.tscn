@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bor1qysn2nawp"]
+
+[ext_resource type="PackedScene" uid="uid://cbnuafrikidgc" path="res://Scenes/Area Functionality/area_template.tscn" id="1_kq0vx"]
+
+[node name="Area4" unique_id=1279305082 instance=ExtResource("1_kq0vx")]

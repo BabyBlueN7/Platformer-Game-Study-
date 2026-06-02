@@ -12,13 +12,15 @@ var player : PlayerController
 var hud : HUD
 var checkpoints: Array[Vector2] = []
 var current_checkpoint: Vector2 = Vector2.ZERO
+var has_jetpack: bool = false
+
 
 
 func _ready():
 	hud = get_tree().get_first_node_in_group("hud")
 	area_container = get_tree().get_first_node_in_group("area_container")
 	player = get_tree().get_first_node_in_group("player")
-	load_area(start_area) 
+	load_area(start_area)
 
 func next_area():
 	current_area += 1
@@ -43,6 +45,11 @@ func load_area(area_number):
 	var player_start_position = get_tree().get_first_node_in_group("player_start_position") as Node2D
 	player.teleport_to_location(player_start_position.position)
 	area_started.emit()
+	# jetpack activate area from 4
+	if area_number >= 4:
+		has_jetpack = true
+		hud.show_jetpack_icon()
+
 
 #energy cell pickup
 func add_energy_cells(cell_position: Vector2):
@@ -64,3 +71,9 @@ func reset_energy_cells():
 	energy_cells = 0
 	hud.update_energy_cell_label(energy_cells)
 	hud.portal_closed()
+
+# jetpack pickup
+func pickup_jetpack(cell_position: Vector2):
+	has_jetpack = true
+	hud.show_jetpack_icon()
+	

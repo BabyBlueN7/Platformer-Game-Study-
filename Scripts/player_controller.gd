@@ -16,6 +16,7 @@ var jump_buffer_timer: float = 0.0
 var coyote_timer: float = 0.0
 var was_on_floor = true
 var hud: HUD
+var double_jump_used: bool = false
 
 func _ready():
 	hud = get_tree().get_first_node_in_group("hud")
@@ -46,6 +47,7 @@ func _physics_process(delta: float) -> void:
 	# Reset coyote timer when grounded
 	if is_on_floor():
 		coyote_timer = coyote_time
+		double_jump_used = false   # ✅ reset when touching ground
 
 	# Handle jump with buffer + coyote time
 	if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
@@ -53,8 +55,16 @@ func _physics_process(delta: float) -> void:
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
 		var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
-		if audio_manager:
-			audio_manager.play_jump()
+		audio_manager.play_jump()
+
+# Double Jump
+	elif jump_buffer_timer > 0.0 and not is_on_floor() and GameManager.has_jetpack and not double_jump_used:
+		velocity.y = jump_power * jump_multiplier
+		jump_buffer_timer = 0.0
+		double_jump_used = true
+		var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
+		audio_manager.play_jetpack()
+
 
 	# Horizontal movement
 	direction = Input.get_axis("LEFT", "RIGHT")

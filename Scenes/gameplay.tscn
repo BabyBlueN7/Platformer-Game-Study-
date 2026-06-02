@@ -10,10 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://dm3mth5yteysn" path="res://Audio/jump.MP3" id="7_1qnfl"]
 [ext_resource type="AudioStream" uid="uid://cwphj5xljnjpl" path="res://Audio/footstep_concrete_002.ogg" id="8_urrcd"]
 [ext_resource type="AudioStream" uid="uid://bmb0e47y14mys" path="res://Audio/impactWood_heavy_001.ogg" id="9_puebw"]
+[ext_resource type="AudioStream" uid="uid://wbbyhhqd0t4t" path="res://Audio/jetpack.wav" id="11_ltefv"]
 
 [node name="Gameplay" type="Node2D" unique_id=1378857908]
 script = ExtResource("1_5h7oy")
-start_area = 2
+start_area = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009314414]
 
@@ -22,6 +23,9 @@ start_area = 2
 [node name="Stopwatch" parent="." unique_id=569357057 instance=ExtResource("2_m34ki")]
 
 [node name="Player" parent="." unique_id=1205173757 instance=ExtResource("1_hf1ha")]
+gravity = 980.0
+jump_buffer_time = 0.1
+coyote_time = 0.1
 
 [node name="AudioManager" type="Node" parent="." unique_id=1976354974 groups=["audio_manager"]]
 script = ExtResource("4_1qnfl")
@@ -47,5 +51,10 @@ pitch_scale = 0.45
 [node name="LandSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=1096625309]
 stream = ExtResource("9_puebw")
 volume_db = -11.079
+
+[node name="JetpackSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=881566679]
+stream = ExtResource("11_ltefv")
+volume_db = -3.823
+pitch_scale = 1.92
 
 [node name="Area" type="Node2D" parent="." unique_id=58399073 groups=["area_container"]]

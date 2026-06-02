@@ -26,3 +26,7 @@ func stop_walking():
 # land
 func play_land():
 	$LandSound.play()
+
+# jetpack  sound
+func play_jetpack():
+	$JetpackSound.play()

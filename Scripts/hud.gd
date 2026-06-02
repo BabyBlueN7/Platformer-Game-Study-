@@ -57,3 +57,6 @@ func _on_CheckpointButton_pressed():
 func _hide_buttons():
 	RestartButton.visible = false
 	CheckpointButton.visible = false
+
+func show_jetpack_icon():
+	$JetpackIcon.visible = true

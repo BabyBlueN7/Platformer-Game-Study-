@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d4nypkb2jrpg7"]
+
+[ext_resource type="Texture2D" uid="uid://c4c1ra8lfeqte" path="res://Texture/jetpack-flying-doodle.png" id="1_lfb18"]
+[ext_resource type="Script" uid="uid://bsbm1i6a1pjfe" path="res://Scripts/jetpack_pickup.gd" id="1_ptl1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfb18"]
+size = Vector2(10, 11)
+
+[node name="JetpackPickup" type="Area2D" unique_id=664587338]
+script = ExtResource("1_ptl1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=880860586]
+position = Vector2(-2.3841858e-07, -2.3841858e-07)
+scale = Vector2(0.023437502, 0.023437502)
+texture = ExtResource("1_lfb18")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1408247435]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lfb18")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
