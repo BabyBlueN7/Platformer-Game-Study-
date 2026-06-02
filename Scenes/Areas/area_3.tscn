@@ -5,5 +5,17 @@
 
 [node name="Area3" unique_id=1279305082 instance=ExtResource("1_uylif")]
 
+[node name="AreaExit" parent="." index="4" unique_id=1586328369]
+position = Vector2(145, 379)
+
+[node name="EnergyCell" parent="EnergyCells" parent_id_path=PackedInt32Array(222413011) index="0" unique_id=1681074975]
+position = Vector2(97, 378)
+
+[node name="EnergyCell2" parent="EnergyCells" parent_id_path=PackedInt32Array(222413011) index="1" unique_id=212889460]
+position = Vector2(116, 379)
+
+[node name="EnergyCell3" parent="EnergyCells" parent_id_path=PackedInt32Array(222413011) index="2" unique_id=2120289998]
+position = Vector2(78, 380)
+
 [node name="JetpackPickup" parent="." index="7" unique_id=1142288936 instance=ExtResource("2_85yet")]
-position = Vector2(57, 433)
+position = Vector2(11, 435)

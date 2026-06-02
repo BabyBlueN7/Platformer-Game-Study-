@@ -54,7 +54,7 @@ volume_db = -11.079
 
 [node name="JetpackSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=881566679]
 stream = ExtResource("11_ltefv")
-volume_db = -3.823
+volume_db = -9.176
 pitch_scale = 1.92
 
 [node name="Area" type="Node2D" parent="." unique_id=58399073 groups=["area_container"]]

@@ -75,5 +75,6 @@ func reset_energy_cells():
 # jetpack pickup
 func pickup_jetpack(cell_position: Vector2):
 	has_jetpack = true
+	if hud:
+		hud.show_jetpack_popup("Jetpack activated — you can double jump", 6.0)
 	hud.show_jetpack_icon()
-	

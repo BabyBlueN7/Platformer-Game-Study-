@@ -8,6 +8,7 @@ class_name HUD
 @export var CheckpointButton: Button
 
 var stopwatch : stopwatch
+var _jetpack_popup_token: int = 0
 
 func _ready():
 	stopwatch = get_tree().get_first_node_in_group("stopwatch")
@@ -60,3 +61,12 @@ func _hide_buttons():
 
 func show_jetpack_icon():
 	$JetpackIcon.visible = true
+
+func show_jetpack_popup(text: String, duration: float = 6.0) -> void:
+	_jetpack_popup_token += 1
+	var my_token = _jetpack_popup_token
+	$JetpackLabel.text = text
+	$JetpackLabel.visible = true
+	await get_tree().create_timer(duration).timeout
+	if my_token == _jetpack_popup_token:
+		$JetpackLabel.visible = false
