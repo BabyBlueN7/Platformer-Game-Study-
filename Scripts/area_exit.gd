@@ -18,4 +18,5 @@ func close():
 
 func _on_body_entered(body):
 	if is_open && body is PlayerController:
-		GameManager.next_area()
+		var hud = get_tree().get_first_node_in_group("hud") as HUD
+		hud.show_next_level_button()   # ⬅️ show button when player enters portal

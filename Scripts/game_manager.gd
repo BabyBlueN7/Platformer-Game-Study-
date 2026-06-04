@@ -59,7 +59,6 @@ func add_energy_cells(cell_position: Vector2):
 	# Save checkpoint
 	checkpoints.append(cell_position)
 	current_checkpoint = cell_position
-
 	if energy_cells >= 3:
 		var portal = get_tree().get_first_node_in_group("area_exits") as AreaExit
 		portal.open()

@@ -94,6 +94,7 @@ func teleport_to_location(new_location):
 	camera.reset_smoothing()
 
 func die():
+	hud.pause_timer()   # pause timer when death popup showss
 	# Example: respawn at start position
 	if GameManager.energy_cells == 0:
 		hud.show_restart_button()

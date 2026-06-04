@@ -819,7 +819,7 @@ paragraph_spacing = 5.0
 font = ExtResource("6_ux5h0")
 font_size = 42
 
-[node name="HUD" type="Control" unique_id=1729850713 node_paths=PackedStringArray("energy_cell_label", "portal_label", "stopwatch_label", "RestartButton", "CheckpointButton") groups=["hud"]]
+[node name="HUD" type="Control" unique_id=1729850713 node_paths=PackedStringArray("energy_cell_label", "portal_label", "stopwatch_label", "RestartButton", "CheckpointButton", "NextLevelButton") groups=["hud"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -832,6 +832,7 @@ portal_label = NodePath("PortalLabel")
 stopwatch_label = NodePath("stopwatchlabel")
 RestartButton = NodePath("RestartButton")
 CheckpointButton = NodePath("CheckpointButton")
+NextLevelButton = NodePath("NextLevelButton")
 
 [node name="EnergyCellTexture" type="TextureRect" parent="." unique_id=1389431164]
 layout_mode = 1
@@ -913,6 +914,24 @@ theme_override_fonts/font = ExtResource("4_8glcj")
 theme_override_font_sizes/font_size = 22
 text = "LOAD FROM LAST CHECKPOINT"
 
+[node name="NextLevelButton" type="Button" parent="." unique_id=365169349]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -15.5
+offset_right = 49.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_8glcj")
+theme_override_font_sizes/font_size = 47
+text = "NEXT LEVEL"
+
 [node name="JetpackIcon" type="TextureRect" parent="." unique_id=567357234]
 visible = false
 layout_mode = 1
@@ -943,3 +962,4 @@ label_settings = SubResource("LabelSettings_mqf2c")
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="CheckpointButton" to="." method="_on_CheckpointButton_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

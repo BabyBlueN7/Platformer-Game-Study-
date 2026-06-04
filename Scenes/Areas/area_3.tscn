@@ -1,52 +1,53 @@
 [gd_scene format=3 uid="uid://n3r742axu0xv"]
 
 [ext_resource type="PackedScene" uid="uid://cbnuafrikidgc" path="res://Scenes/Area Functionality/area_template.tscn" id="1_uylif"]
+[ext_resource type="PackedScene" uid="uid://d4nypkb2jrpg7" path="res://Scenes/jetpack_pickup.tscn" id="2_85yet"]
 [ext_resource type="PackedScene" uid="uid://32gr07kq3ofu" path="res://Scenes/moving_platform_large.tscn" id="2_dyeog"]
 [ext_resource type="Texture2D" uid="uid://c5dvsep18y783" path="res://Texture/water.png" id="4_jvle8"]
 
-[sub_resource type="Curve2D" id="Curve2D_dyeog"]
+[sub_resource type="Curve2D" id="Curve2D_jvle8"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -95)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_jvle8"]
+[sub_resource type="Curve2D" id="Curve2D_b5ql2"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -8, 32, 0, 0, 0, 0, 341, -265)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_b5ql2"]
+[sub_resource type="Curve2D" id="Curve2D_ffil2"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 165, 2)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_ffil2"]
+[sub_resource type="Curve2D" id="Curve2D_rn3bd"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 331, 4)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_rn3bd"]
+[sub_resource type="Curve2D" id="Curve2D_treb1"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 5.42041, 73.39877, 0, 0, 0, 0, 8, -8)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_treb1"]
+[sub_resource type="Curve2D" id="Curve2D_hupat"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -80)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_hupat"]
+[sub_resource type="Curve2D" id="Curve2D_1rc1n"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, -97)
@@ -57,12 +58,12 @@ point_count = 2
 size = Vector2(2.5, 281)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twvbk"]
-size = Vector2(621.71906, 3)
+size = Vector2(1116.7148, 7.5)
 
 [node name="Area3" unique_id=1279305082 instance=ExtResource("1_uylif")]
 
 [node name="PlayerStartPosition" parent="." index="0" unique_id=720944770]
-position = Vector2(103, 436)
+position = Vector2(3329.0999, -66.100006)
 
 [node name="TileMap" parent="." index="1" unique_id=939034929]
 layer_0/tile_data = PackedInt32Array(1376327, 0, 3, 1376328, 65536, 3, 1376329, 131072, 3, -65443, 0, 3, -65442, 65536, 3, -65441, 131072, 3, -327540, 131072, 3, -327541, 0, 3, -130939, 131072, 3, -130940, 0, 3, -458604, 131072, 3, -458605, 0, 3, -458584, 131072, 7, -458585, 65536, 4, -458586, 65536, 4, -458580, 65536, 4, -458581, 65536, 4, -458582, 0, 7, -589669, 131072, 3, -589670, 0, 3, -327515, 0, 6, -458587, 0, 4, -327507, 131072, 6, -393043, 131072, 5, -458579, 131072, 4, -327508, 65536, 6, -393044, 65536, 5, -327509, 65536, 6, -393045, 0, 5, -393050, 65536, 5, -393051, 0, 5, -393049, 131072, 5, -327513, 65536, 6, -327514, 65536, 6, -327512, 131072, 7, -327510, 0, 7, -196350, 131072, 3, -196351, 0, 3, -196340, 131072, 3, -196341, 0, 3, -196331, 131072, 3, -196332, 0, 3, -196323, 131072, 3, -196324, 0, 3, -196313, 131072, 3, -196314, 0, 3, -196303, 131072, 3, -196304, 0, 3, -196294, 131072, 3, -196295, 0, 3, 1311099, 0, 3, 983429, 131072, 3, 1114496, 131072, 3, 983428, 0, 3, 1114495, 0, 3, 1311100, 131072, 3, 459228, 131072, 3, 459227, 0, 3, 459236, 0, 3, 459245, 0, 3, 459237, 131072, 3, 459246, 131072, 3)
@@ -70,38 +71,38 @@ layer_1/tile_data = PackedInt32Array(2555913, 65536, 6, 2490377, 65536, 5, 24248
 
 [node name="MovingPlatformLarge" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="0" unique_id=716598573 instance=ExtResource("2_dyeog")]
 position = Vector2(1023, 582)
-curve = SubResource("Curve2D_dyeog")
+curve = SubResource("Curve2D_jvle8")
 path_time = 0.4
 
 [node name="MovingPlatformLarge2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="1" unique_id=1405623201 instance=ExtResource("2_dyeog")]
 position = Vector2(1217, 308)
-curve = SubResource("Curve2D_jvle8")
+curve = SubResource("Curve2D_b5ql2")
 path_time = 2.0
 
 [node name="MovingPlatformLarge3" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="2" unique_id=980481728 instance=ExtResource("2_dyeog")]
 position = Vector2(2812, -104)
-curve = SubResource("Curve2D_b5ql2")
+curve = SubResource("Curve2D_ffil2")
 path_time = 2.0
 ease = 0
 
 [node name="MovingPlatformLarge4" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="3" unique_id=147385293 instance=ExtResource("2_dyeog")]
 position = Vector2(5400, 520)
-curve = SubResource("Curve2D_ffil2")
+curve = SubResource("Curve2D_rn3bd")
 path_time = 2.0
 
 [node name="MovingPlatformLarge5" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="4" unique_id=1545606370 instance=ExtResource("2_dyeog")]
 position = Vector2(6008, 432)
-curve = SubResource("Curve2D_rn3bd")
+curve = SubResource("Curve2D_treb1")
 path_time = 0.5
 
 [node name="MovingPlatformLarge6" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="5" unique_id=2122745515 instance=ExtResource("2_dyeog")]
 position = Vector2(6360, 200)
-curve = SubResource("Curve2D_treb1")
+curve = SubResource("Curve2D_hupat")
 path_time = 0.5
 
 [node name="MovingPlatformLarge7" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="6" unique_id=1914243377 instance=ExtResource("2_dyeog")]
 position = Vector2(7617, 319)
-curve = SubResource("Curve2D_hupat")
+curve = SubResource("Curve2D_1rc1n")
 path_time = 0.6
 
 [node name="CollisionShape2D" parent="InvisibleWall" parent_id_path=PackedInt32Array(817417049) index="0" unique_id=1971438767]
@@ -124,7 +125,9 @@ position = Vector2(2694, -73)
 position = Vector2(6312, 200)
 
 [node name="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="0" unique_id=1855279603]
-position = Vector2(1285.1405, 656)
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(1001, 654)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="1" unique_id=1337872932]
 position = Vector2(2250, 656)
@@ -137,7 +140,7 @@ shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="3" unique_id=228393241]
-position = Vector2(3545, 266)
+position = Vector2(3697, 266)
 shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
@@ -147,7 +150,7 @@ shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="5" unique_id=1377607980]
-position = Vector2(4883, 194)
+position = Vector2(4631, 194)
 shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
@@ -162,13 +165,8 @@ shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="8" unique_id=1071568950]
-position = Vector2(7820, 505)
-shape = SubResource("RectangleShape2D_twvbk")
-debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="9" unique_id=1704799168]
-position = Vector2(8024.0005, 379.99976)
-rotation = -0.7330383
+position = Vector2(7901.9995, 380.00018)
+rotation = -0.4590216
 shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
@@ -177,3 +175,6 @@ modulate = Color(0.7202103, 0.7202103, 0.7202103, 0.6313726)
 position = Vector2(3520, 257.6875)
 scale = Vector2(0.059000004, 0.056928977)
 texture = ExtResource("4_jvle8")
+
+[node name="JetpackPickup" parent="." index="8" unique_id=664587338 instance=ExtResource("2_85yet")]
+position = Vector2(1627, 30)
