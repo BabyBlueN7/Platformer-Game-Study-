@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bor1qysn2nawp"]
-
-[ext_resource type="PackedScene" uid="uid://cbnuafrikidgc" path="res://Scenes/Area Functionality/area_template.tscn" id="1_kq0vx"]
-[ext_resource type="PackedScene" uid="uid://d4nypkb2jrpg7" path="res://Scenes/jetpack_pickup.tscn" id="2_vdonl"]
-
-[node name="Area4" unique_id=1279305082 instance=ExtResource("1_kq0vx")]
-
-[node name="JetpackPickup" parent="." index="7" unique_id=664587338 instance=ExtResource("2_vdonl")]
-position = Vector2(31, 413)
