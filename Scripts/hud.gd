@@ -73,14 +73,28 @@ func _on_RestartButton_pressed():
 	update_energy_cell_label(0)
 	portal_closed()
 	GameManager.load_area(GameManager.current_area)    # ✅ reloads current level
+	# get the (possibly new) player instance and resurrect it
+	var player = get_tree().get_first_node_in_group("player") as PlayerController
+	if player:
+		# small delay to ensure the new player is fully in the tree
+		await get_tree().process_frame
+		player.resurrection()
 	reset_timer()
 	_hide_buttons()
 
 func _on_CheckpointButton_pressed():
 	if GameManager.current_checkpoint != Vector2.ZERO:
 		var player = get_tree().get_first_node_in_group("player") as PlayerController
-		player.global_position = GameManager.current_checkpoint
-		resume_timer()
+		if player:
+			# teleport slightly above the checkpoint to avoid being stuck inside geometry
+			player.global_position = GameManager.current_checkpoint + Vector2(0, -8)
+			# optional tiny delay so teleport settles
+			await get_tree().create_timer(0.12).timeout
+			resume_timer()
+			player.resurrection()
+			var audio_manager = get_tree().get_first_node_in_group("audio_manager")
+			if audio_manager:
+				audio_manager.play_resurrection()
 	_hide_buttons()
 
 func _on_next_level_button_pressed():

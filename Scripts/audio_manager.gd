@@ -30,3 +30,8 @@ func play_land():
 # jetpack  sound
 func play_jetpack():
 	$JetpackSound.play()
+
+# resurrection sound
+func play_resurrection():
+	if $ResurrectionSound:
+		$ResurrectionSound.play()

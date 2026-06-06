@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dnvtosa10cv1a" path="res://Scripts/game_manager.gd" id="1_5h7oy"]
 [ext_resource type="PackedScene" uid="uid://hl2pjyh382df" path="res://Scenes/player.tscn" id="1_hf1ha"]
 [ext_resource type="PackedScene" uid="uid://cl0ep74w3spae" path="res://Scenes/UI/hud.tscn" id="1_wbxth"]
-[ext_resource type="PackedScene" uid="uid://di1l4dnmf6vpo" path="res://Scenes/stopwatch.tscn" id="2_m34ki"]
 [ext_resource type="Script" uid="uid://c015q3b8hbpfe" path="res://Scripts/audio_manager.gd" id="4_1qnfl"]
 [ext_resource type="AudioStream" uid="uid://cbqlyhk4jbuvr" path="res://Audio/Jewel.mp3" id="4_r8bcl"]
 [ext_resource type="AudioStream" uid="uid://lm62go24ox4f" path="res://Audio/Portal Open.wav" id="5_rlidi"]
@@ -11,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cwphj5xljnjpl" path="res://Audio/footstep_concrete_002.ogg" id="8_urrcd"]
 [ext_resource type="AudioStream" uid="uid://bmb0e47y14mys" path="res://Audio/impactWood_heavy_001.ogg" id="9_puebw"]
 [ext_resource type="AudioStream" uid="uid://wbbyhhqd0t4t" path="res://Audio/jetpack.wav" id="11_ltefv"]
+[ext_resource type="AudioStream" uid="uid://ddwpubym6ajko" path="res://Audio/ambient.wav" id="12_rg35f"]
 
 [node name="Gameplay" type="Node2D" unique_id=1378857908]
 script = ExtResource("1_5h7oy")
@@ -19,8 +19,6 @@ current_area = 3
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009314414]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1729850713 instance=ExtResource("1_wbxth")]
-
-[node name="Stopwatch" parent="." unique_id=569357057 instance=ExtResource("2_m34ki")]
 
 [node name="Player" parent="." unique_id=1205173757 instance=ExtResource("1_hf1ha")]
 gravity = 980.0
@@ -56,5 +54,9 @@ volume_db = -11.079
 stream = ExtResource("11_ltefv")
 volume_db = -9.176
 pitch_scale = 1.92
+
+[node name="ResurrectionSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=1039117501]
+stream = ExtResource("12_rg35f")
+volume_db = -13.161
 
 [node name="Area" type="Node2D" parent="." unique_id=58399073 groups=["area_container"]]

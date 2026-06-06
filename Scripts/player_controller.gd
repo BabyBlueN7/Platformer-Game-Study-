@@ -17,11 +17,35 @@ var coyote_timer: float = 0.0
 var was_on_floor = true
 var hud: HUD
 var double_jump_used: bool = false
+var is_alive: bool = true
+var _saved_camera_limit_bottom: int = -1
+
 
 func _ready():
 	hud = get_tree().get_first_node_in_group("hud")
 
+func resurrection():
+	is_alive = true
+	velocity = Vector2.ZERO
+	# reset any state that should be cleared on respawn
+	double_jump_used = false
+	was_on_floor = is_on_floor()
+	# restore camera limits and smoothing
+	if camera:
+		if _saved_camera_limit_bottom != -1:
+			camera.limit_bottom = _saved_camera_limit_bottom
+			_saved_camera_limit_bottom = -1
+		camera.reset_smoothing()
+	# ensure processing is enabled
+	set_physics_process(true)
+	set_process(true)
+	# debug: confirm resurrection ran
+	print("resurrection called — is_alive:", is_alive, "velocity:", velocity)
+
+
 func _input(event):
+	if not is_alive:
+		return
 	# Handle jump input buffering
 	if event.is_action_pressed("JUMP"):
 		jump_buffer_timer = jump_buffer_time
@@ -34,6 +58,8 @@ func _input(event):
 		set_collision_mask_value(10, true)
 
 func _physics_process(delta: float) -> void:
+	if not is_alive:
+		return
 	# Add gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -94,6 +120,12 @@ func teleport_to_location(new_location):
 	camera.reset_smoothing()
 
 func die():
+	is_alive = false
+	# Clamp camera so it won't move further down and disable smoothing for a stable frame
+	if camera:
+		_saved_camera_limit_bottom = camera.limit_bottom
+		# clamp bottom to current camera Y so it won't reveal empty area below
+		camera.limit_bottom = int(camera.global_position.y)
 	hud.pause_timer()   # pause timer when death popup showss
 	# Example: respawn at start position
 	if GameManager.energy_cells == 0:
