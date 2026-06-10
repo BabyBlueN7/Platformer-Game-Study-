@@ -1,44 +1,53 @@
 [gd_scene format=3 uid="uid://djng7kba3gspx"]
 
 [ext_resource type="PackedScene" uid="uid://cbnuafrikidgc" path="res://Scenes/Area Functionality/area_template.tscn" id="1_cuj55"]
+[ext_resource type="Texture2D" uid="uid://cml56bnm7f85i" path="res://Texture/Background/layers/clouds_1.png" id="3_66mxf"]
 [ext_resource type="PackedScene" uid="uid://32gr07kq3ofu" path="res://Scenes/moving_platform_large.tscn" id="3_n7iet"]
+[ext_resource type="Texture2D" uid="uid://cwuucxk55hrgo" path="res://Texture/Background/layers/clouds_2.png" id="4_xbm8f"]
+[ext_resource type="Texture2D" uid="uid://2bra8yn0dlok" path="res://Texture/Background/layers/ground_1.png" id="5_jvt31"]
+[ext_resource type="Texture2D" uid="uid://yi3wb8yfho57" path="res://Texture/Background/layers/ground_2.png" id="6_krnxw"]
+[ext_resource type="Script" uid="uid://ftsatsif1ng4" path="res://Scripts/CloudLayer.gd" id="6_xbm8f"]
+[ext_resource type="Texture2D" uid="uid://cj4mbglp625qg" path="res://Texture/Background/layers/ground_3.png" id="7_67p76"]
+[ext_resource type="Texture2D" uid="uid://c2hwgumd161m6" path="res://Texture/Background/layers/plant.png" id="8_oc4pm"]
+[ext_resource type="Texture2D" uid="uid://dei8fjv56fels" path="res://Texture/Background/layers/rocks.png" id="9_3jdrl"]
+[ext_resource type="Texture2D" uid="uid://rxxfbsj86aja" path="res://Texture/Background/layers/sky.png" id="10_xhjvg"]
 
-[sub_resource type="Curve2D" id="Curve2D_ng53c"]
+[sub_resource type="Curve2D" id="Curve2D_xbm8f"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_raj0s"]
+[sub_resource type="Curve2D" id="Curve2D_jvt31"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 104, -96)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_n7iet"]
+[sub_resource type="Curve2D" id="Curve2D_krnxw"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -136, -96)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_a202p"]
+[sub_resource type="Curve2D" id="Curve2D_67p76"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 184, 0, 0, 0, 0, 0, 184, -72)
 }
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_h0g87"]
+[sub_resource type="Curve2D" id="Curve2D_oc4pm"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_f81ap"]
+[sub_resource type="Curve2D" id="Curve2D_3jdrl"]
 resource_local_to_scene = true
 bake_interval = 0.01
 _data = {
@@ -46,14 +55,14 @@ _data = {
 }
 point_count = 21
 
-[sub_resource type="Curve2D" id="Curve2D_vhlnj"]
+[sub_resource type="Curve2D" id="Curve2D_xhjvg"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -96)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_7fadb"]
+[sub_resource type="Curve2D" id="Curve2D_x6vf2"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -75, 10.55542, 0, 0, 0, 0, -77, -69.66669)
@@ -69,7 +78,7 @@ size = Vector2(365.4381, 3)
 [node name="AreaTemplate" unique_id=1279305082 instance=ExtResource("1_cuj55")]
 
 [node name="PlayerStartPosition" parent="." index="0" unique_id=720944770]
-position = Vector2(88, 432)
+position = Vector2(575.1423, 358.67395)
 
 [node name="TileMap" parent="." index="1" unique_id=939034929]
 layer_0/tile_data = PackedInt32Array(1835053, 0, 7, 4391179, 0, 3, 4391180, 65536, 3, 4391181, 131072, 3, 4260111, 196608, 3, 4194578, 0, 3, 4194579, 65536, 3, 4194580, 131072, 3, 4522262, 196608, 3, 2031634, 0, 3, 2031635, 65536, 3, 2031636, 65536, 3, 1900565, 0, 3, 2031637, 65536, 3, 1900566, 65536, 3, 2031638, 131072, 3, 1900567, 65536, 3, 1769496, 0, 3, 1900568, 65536, 3, 1769497, 65536, 3, 1900569, 131072, 3, 1769498, 131072, 3, 2228252, 0, 3, 2228253, 131072, 3, 2097178, 131072, 3, 2097177, 0, 3, 4325547, 0, 3, 4325548, 131072, 3, 3145886, 0, 3, 3145887, 65536, 3, 3145888, 65536, 3, 3145889, 131072, 3, 1703980, 196608, 7)
@@ -77,32 +86,32 @@ layer_1/tile_data = PackedInt32Array(2555913, 65536, 6, 2490377, 65536, 5, 24248
 
 [node name="MovingPlatformLarge" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="0" unique_id=716598573 instance=ExtResource("3_n7iet")]
 position = Vector2(656, 472)
-curve = SubResource("Curve2D_ng53c")
+curve = SubResource("Curve2D_xbm8f")
 
 [node name="MovingPlatformLarge2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="1" unique_id=2040110108 instance=ExtResource("3_n7iet")]
 position = Vector2(840, 408)
-curve = SubResource("Curve2D_raj0s")
+curve = SubResource("Curve2D_jvt31")
 path_time = 1.2
 
 [node name="MovingPlatformLarge3" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="2" unique_id=1888075542 instance=ExtResource("3_n7iet")]
 position = Vector2(1160, 408)
-curve = SubResource("Curve2D_n7iet")
+curve = SubResource("Curve2D_krnxw")
 path_time = 1.2
 
 [node name="MovingPlatformLarge4" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="3" unique_id=1722020280 instance=ExtResource("3_n7iet")]
 position = Vector2(2382, 864)
-curve = SubResource("Curve2D_a202p")
+curve = SubResource("Curve2D_67p76")
 path_time = 2.5
 
 [node name="MovingPlatformLarge5" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="4" unique_id=426266405 instance=ExtResource("3_n7iet")]
 position = Vector2(3064, 992)
-curve = SubResource("Curve2D_h0g87")
+curve = SubResource("Curve2D_oc4pm")
 path_time = 4.0
 
 [node name="MovingPlatformLarge6" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="5" unique_id=425006739 instance=ExtResource("3_n7iet")]
 position = Vector2(3193.4531, 1472)
 scale = Vector2(1.1398337, 1)
-curve = SubResource("Curve2D_f81ap")
+curve = SubResource("Curve2D_3jdrl")
 path_time = 5.0
 transition = 0
 looping = true
@@ -110,13 +119,13 @@ looping = true
 [node name="MovingPlatformLarge7" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="6" unique_id=1903793155 instance=ExtResource("3_n7iet")]
 position = Vector2(3792, 1472)
 scale = Vector2(1, 1.2500007)
-curve = SubResource("Curve2D_vhlnj")
+curve = SubResource("Curve2D_xhjvg")
 path_time = 0.4
 
 [node name="MovingPlatformLarge8" parent="MovingPlatforms" parent_id_path=PackedInt32Array(1073785613) index="7" unique_id=1878814531 instance=ExtResource("3_n7iet")]
 position = Vector2(4696, 992)
 scale = Vector2(1, 0.94736844)
-curve = SubResource("Curve2D_7fadb")
+curve = SubResource("Curve2D_x6vf2")
 path_time = 0.35
 transition = 8
 
@@ -163,3 +172,84 @@ debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 position = Vector2(4672, 1256)
 shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="0" unique_id=1725706809]
+texture_filter = 1
+motion_scale = Vector2(0.05, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sky" index="0" unique_id=1370078398]
+position = Vector2(2244, 80.99974)
+scale = Vector2(3.0458338, 2.8166666)
+texture = ExtResource("10_xhjvg")
+
+[node name="cloud1" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="1" unique_id=1432809022]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(2160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud1" index="0" unique_id=1501238255]
+position = Vector2(2136.444, 599.7501)
+scale = Vector2(2.5921295, 2.592129)
+texture = ExtResource("3_66mxf")
+
+[node name="rocks" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="2" unique_id=490995753]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(2160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/rocks" index="0" unique_id=1460581332]
+position = Vector2(700.44434, 815.99994)
+scale = Vector2(1.4962962, 1.4962963)
+texture = ExtResource("9_3jdrl")
+
+[node name="cloud2" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="3" unique_id=1596445182]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(2160, 0)
+script = ExtResource("6_xbm8f")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud2" index="0" unique_id=1053709173]
+position = Vector2(355.55548, 439.99994)
+scale = Vector2(0.90370363, 0.90370387)
+texture = ExtResource("4_xbm8f")
+
+[node name="ground1" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="4" unique_id=1063078605]
+texture_filter = 1
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(2160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ground1" index="0" unique_id=1798208904]
+texture_repeat = 1
+position = Vector2(1083.5555, 588)
+scale = Vector2(1.9037038, 1.9037038)
+texture = ExtResource("5_jvt31")
+
+[node name="ground2" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="5" unique_id=1606129791]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0)
+motion_mirroring = Vector2(2160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ground2" index="0" unique_id=447503961]
+position = Vector2(1266.6666, 499.99994)
+scale = Vector2(1.7259258, 1.7259259)
+texture = ExtResource("6_krnxw")
+
+[node name="ground3" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="6" unique_id=1991340649]
+texture_filter = 1
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(2160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ground3" index="0" unique_id=1412426443]
+position = Vector2(1032.8893, 620.00006)
+scale = Vector2(1.9481485, 1.9481481)
+texture = ExtResource("7_67p76")
+
+[node name="plant" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="7" unique_id=739847023]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(2160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/plant" index="0" unique_id=715198371]
+position = Vector2(4055.1116, 886.0001)
+scale = Vector2(1.2481481, 1.2481481)
+texture = ExtResource("8_oc4pm")
