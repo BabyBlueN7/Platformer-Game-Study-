@@ -79,7 +79,7 @@ size = Vector2(365.4381, 3)
 
 [node name="PlayerStartPosition" parent="." index="0" unique_id=720944770]
 visibility_layer = 4
-position = Vector2(52.105316, 438.69116)
+position = Vector2(78.66124, 427.0454)
 
 [node name="TileMap" parent="." index="1" unique_id=939034929]
 visibility_layer = 4
@@ -185,19 +185,31 @@ position = Vector2(1481.3467, -1796)
 scale = Vector2(1.5930694, 1.3407407)
 texture = ExtResource("10_xhjvg")
 
-[node name="cloud1" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="1" unique_id=1432809022]
+[node name="cloudbig" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="1" unique_id=1432809022]
 texture_filter = 1
-motion_scale = Vector2(0.1, 0)
+motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(2160, 0)
 script = ExtResource("6_xbm8f")
 cloud_speed = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud1" index="0" unique_id=1501238255]
-position = Vector2(2136.444, 599.7501)
-scale = Vector2(2.5921295, 2.592129)
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloudbig" index="0" unique_id=1501238255]
+position = Vector2(712, 416)
+scale = Vector2(0.666435, 0.6664349)
 texture = ExtResource("3_66mxf")
 
-[node name="rocks" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="2" unique_id=490995753]
+[node name="cloudbig2" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="2" unique_id=13460538]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(2160, 0)
+script = ExtResource("6_xbm8f")
+cloud_speed = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloudbig2" index="0" unique_id=2081269478]
+position = Vector2(2952, 944)
+scale = Vector2(0.666435, 0.6664349)
+texture = ExtResource("3_66mxf")
+
+[node name="rocks" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="3" unique_id=490995753]
 texture_filter = 1
 motion_scale = Vector2(0.5, 0)
 motion_mirroring = Vector2(2160, 0)
@@ -207,18 +219,19 @@ position = Vector2(700.44434, 815.99994)
 scale = Vector2(1.4962962, 1.4962963)
 texture = ExtResource("9_3jdrl")
 
-[node name="cloud2" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="3" unique_id=1596445182]
+[node name="cloud2" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="4" unique_id=1596445182]
 texture_filter = 1
+motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(2160, 0)
 script = ExtResource("6_xbm8f")
 cloud_speed = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud2" index="0" unique_id=1053709173]
-position = Vector2(160, 416.00003)
+position = Vector2(160.00002, 383.99997)
 scale = Vector2(0.27037027, 0.2703704)
 texture = ExtResource("4_xbm8f")
 
-[node name="cloud3" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="4" unique_id=1747029097]
+[node name="cloud3" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="5" unique_id=1747029097]
 texture_filter = 1
 motion_mirroring = Vector2(2160, 0)
 script = ExtResource("6_xbm8f")
@@ -229,7 +242,7 @@ position = Vector2(1375.9999, 424)
 scale = Vector2(0.27037027, 0.2703704)
 texture = ExtResource("4_xbm8f")
 
-[node name="cloud4" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="5" unique_id=1321806264]
+[node name="cloud4" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="6" unique_id=1321806264]
 texture_filter = 1
 motion_mirroring = Vector2(2160, 0)
 script = ExtResource("6_xbm8f")
@@ -240,7 +253,7 @@ position = Vector2(3928.0002, 863.9999)
 scale = Vector2(0.9097218, 0.9097222)
 texture = ExtResource("4_xbm8f")
 
-[node name="cloud5" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="6" unique_id=1174734270]
+[node name="cloud5" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="7" unique_id=1174734270]
 texture_filter = 1
 motion_mirroring = Vector2(2160, 0)
 script = ExtResource("6_xbm8f")
@@ -251,7 +264,7 @@ position = Vector2(4520.0005, 951.99994)
 scale = Vector2(0.41944426, 0.41944444)
 texture = ExtResource("4_xbm8f")
 
-[node name="ground1" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="7" unique_id=1063078605]
+[node name="ground1" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="8" unique_id=1063078605]
 texture_filter = 1
 motion_scale = Vector2(0.4, 0)
 motion_mirroring = Vector2(2160, 0)
@@ -262,7 +275,7 @@ position = Vector2(1083.5555, 588)
 scale = Vector2(1.9037038, 1.9037038)
 texture = ExtResource("5_jvt31")
 
-[node name="ground2" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="8" unique_id=1606129791]
+[node name="ground2" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="9" unique_id=1606129791]
 texture_filter = 1
 motion_scale = Vector2(0.6, 0)
 motion_mirroring = Vector2(2160, 0)
@@ -272,7 +285,7 @@ position = Vector2(1266.6666, 499.99994)
 scale = Vector2(1.7259258, 1.7259259)
 texture = ExtResource("6_krnxw")
 
-[node name="ground3" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="9" unique_id=1991340649]
+[node name="ground3" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="10" unique_id=1991340649]
 texture_filter = 1
 motion_scale = Vector2(0.8, 0)
 motion_mirroring = Vector2(2160, 0)
