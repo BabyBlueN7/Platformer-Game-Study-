@@ -378,3 +378,5 @@ shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1425538592]
+
+[node name="ParallaxForeground" type="ParallaxBackground" parent="." unique_id=1798942512]
