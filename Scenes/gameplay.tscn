@@ -14,7 +14,6 @@
 
 [node name="Gameplay" type="Node2D" unique_id=1378857908]
 script = ExtResource("1_5h7oy")
-current_area = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009314414]
 
