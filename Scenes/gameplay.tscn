@@ -14,16 +14,13 @@
 
 [node name="Gameplay" type="Node2D" unique_id=1378857908]
 script = ExtResource("1_5h7oy")
-current_area = 2
+current_area = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009314414]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1729850713 instance=ExtResource("1_wbxth")]
 
 [node name="Player" parent="." unique_id=1205173757 instance=ExtResource("1_hf1ha")]
-gravity = 980.0
-jump_buffer_time = 0.1
-coyote_time = 0.1
 
 [node name="AudioManager" type="Node" parent="." unique_id=1976354974 groups=["audio_manager"]]
 script = ExtResource("4_1qnfl")

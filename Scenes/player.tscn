@@ -107,9 +107,6 @@ script = ExtResource("1_cvnsp")
 speed = 4.5
 jump_power = 8.0
 camera = NodePath("Camera2D")
-gravity = null
-jump_buffer_time = null
-coyote_time = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=167212023]
 position = Vector2(45, -13)
@@ -140,3 +137,18 @@ script = ExtResource("2_cvnsp")
 player_controller = NodePath("..")
 animation_player = NodePath(".")
 sprite = NodePath("../Sprite2D")
+
+[node name="JetpackEffect" type="CPUParticles2D" parent="." unique_id=1218276849]
+position = Vector2(1, 7)
+emitting = false
+amount = 30
+lifetime = 0.4
+one_shot = true
+speed_scale = 2.0
+spread = 30.0
+gravity = Vector2(0, 200)
+color = Color(0.7019608, 0.101960786, 0.4627451, 0.80784315)
+
+[node name="JetpackTimer" type="Timer" parent="." unique_id=1265272836]
+wait_time = 0.4
+one_shot = true

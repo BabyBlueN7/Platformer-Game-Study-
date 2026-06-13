@@ -90,6 +90,10 @@ func _physics_process(delta: float) -> void:
 		double_jump_used = true
 		var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
 		audio_manager.play_jetpack()
+		# 🔥 Jetpack effect trigger
+		$JetpackEffect.emitting = true
+		$JetpackEffect.restart()
+		$JetpackTimer.start()
 
 
 	# Horizontal movement
@@ -132,3 +136,6 @@ func die():
 		hud.show_restart_button()
 	else:
 		hud.show_restart_and_checkpoint_buttons()
+
+func _on_JetpackTimer_timeout():
+	$JetpackEffect.emitting = false
