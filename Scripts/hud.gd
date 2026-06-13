@@ -65,6 +65,9 @@ func show_restart_and_checkpoint_buttons():
 func show_next_level_button():
 		NextLevelButton.visible = true
 		pause_timer()
+		var player = get_tree().get_first_node_in_group("player") as PlayerController
+		if player:
+			player.controls_enabled = false
 
 func _on_RestartButton_pressed():
 	GameManager.energy_cells = 0
@@ -101,6 +104,10 @@ func _on_next_level_button_pressed():
 		GameManager.next_area()
 		reset_timer() 
 		NextLevelButton.visible = false
+		NextLevelButton.visible = false
+		var player = get_tree().get_first_node_in_group("player") as PlayerController
+		if player:
+			player.controls_enabled = true
 
 func _hide_buttons():
 	RestartButton.visible = false

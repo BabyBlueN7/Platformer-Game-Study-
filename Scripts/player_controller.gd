@@ -11,6 +11,7 @@ class_name PlayerController
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
+var controls_enabled: bool = true
 
 var jump_buffer_timer: float = 0.0
 var coyote_timer: float = 0.0
@@ -58,6 +59,8 @@ func _input(event):
 		set_collision_mask_value(10, true)
 
 func _physics_process(delta: float) -> void:
+	if not is_alive or not controls_enabled:
+		return
 	if not is_alive:
 		return
 	# Add gravity

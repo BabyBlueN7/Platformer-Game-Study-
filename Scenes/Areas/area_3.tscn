@@ -177,7 +177,12 @@ rotation = -0.4590216
 shape = SubResource("RectangleShape2D_twvbk")
 debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
 
-[node name="JetpackPickup" parent="." index="7" unique_id=664587338 instance=ExtResource("2_85yet")]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="DeathZone" parent_id_path=PackedInt32Array(417837194) index="9" unique_id=437048362]
+position = Vector2(1711, 624)
+shape = SubResource("RectangleShape2D_twvbk")
+debug_color = Color(0.53989303, 0, 0.13846368, 0.41960785)
+
+[node name="JetpackPickup" parent="." index="7" unique_id=930896298 instance=ExtResource("2_85yet")]
 position = Vector2(1627, 30)
 
 [node name="sky" type="ParallaxLayer" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1425538592) index="0" unique_id=1253889585]

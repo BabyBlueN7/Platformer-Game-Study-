@@ -49,6 +49,15 @@ func load_area(area_number):
 	# ✅ Play level music here
 	var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
 	audio_manager.play_area_music(area_number)
+	
+	# ✅ HUD visibility control
+	if area_number == 4:
+		hud.hide()   # turn off HUD completely
+		var follow_label = instance.get_node_or_null("FollowLabel")
+		if follow_label:
+			follow_label.show()
+	else:
+			hud.show()
 
 	#moving player to the star position of the new scene
 	var player_start_position = get_tree().get_first_node_in_group("player_start_position") as Node2D
