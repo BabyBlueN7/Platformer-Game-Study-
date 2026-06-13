@@ -10,11 +10,15 @@
 [ext_resource type="AudioStream" uid="uid://cwphj5xljnjpl" path="res://Audio/footstep_concrete_002.ogg" id="8_urrcd"]
 [ext_resource type="AudioStream" uid="uid://bmb0e47y14mys" path="res://Audio/impactWood_heavy_001.ogg" id="9_puebw"]
 [ext_resource type="AudioStream" uid="uid://wbbyhhqd0t4t" path="res://Audio/jetpack.wav" id="11_ltefv"]
+[ext_resource type="AudioStream" uid="uid://bri7q4qadiixe" path="res://Audio/Music/never forget.mp3" id="12_ra47u"]
 [ext_resource type="AudioStream" uid="uid://ddwpubym6ajko" path="res://Audio/ambient.wav" id="12_rg35f"]
+[ext_resource type="AudioStream" uid="uid://diw3cpyury6ks" path="res://Audio/Music/yg.mp3" id="13_r5xtw"]
+[ext_resource type="AudioStream" uid="uid://cvugljp4wg7f1" path="res://Audio/Music/Debutante.mp3" id="14_decfu"]
+[ext_resource type="AudioStream" uid="uid://dsf7jq1n044o6" path="res://Audio/Music/Thank You_spotdown.org.mp3" id="15_p1ih8"]
 
 [node name="Gameplay" type="Node2D" unique_id=1378857908]
 script = ExtResource("1_5h7oy")
-current_area = 4
+current_area = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009314414]
 
@@ -55,5 +59,21 @@ pitch_scale = 1.92
 [node name="ResurrectionSound" type="AudioStreamPlayer" parent="AudioManager" unique_id=1039117501]
 stream = ExtResource("12_rg35f")
 volume_db = -13.161
+
+[node name="Area1Music" type="AudioStreamPlayer" parent="AudioManager" unique_id=173760891]
+stream = ExtResource("12_ra47u")
+volume_db = -18.909
+
+[node name="Area2Music" type="AudioStreamPlayer" parent="AudioManager" unique_id=491480115]
+stream = ExtResource("13_r5xtw")
+volume_db = -19.636
+
+[node name="Area3Music" type="AudioStreamPlayer" parent="AudioManager" unique_id=356139183]
+stream = ExtResource("14_decfu")
+volume_db = -18.909
+
+[node name="Area4Music" type="AudioStreamPlayer" parent="AudioManager" unique_id=375121270]
+stream = ExtResource("15_p1ih8")
+volume_db = -28.364
 
 [node name="Area" type="Node2D" parent="." unique_id=58399073 groups=["area_container"]]

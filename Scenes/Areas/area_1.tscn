@@ -79,7 +79,7 @@ size = Vector2(365.4381, 3)
 
 [node name="PlayerStartPosition" parent="." index="0" unique_id=720944770]
 visibility_layer = 4
-position = Vector2(1622.0356, 616.7465)
+position = Vector2(59.884323, 424.28925)
 
 [node name="TileMap" parent="." index="1" unique_id=939034929]
 visibility_layer = 4

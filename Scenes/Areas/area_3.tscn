@@ -232,6 +232,3 @@ modulate = Color(0.78039217, 0, 0, 0.81960785)
 position = Vector2(3520, 88.46626)
 scale = Vector2(0.05899996, 0.2139891)
 texture = ExtResource("4_jvle8")
-
-[node name="JetpackPickup2" parent="." index="10" unique_id=1671745557 instance=ExtResource("2_85yet")]
-position = Vector2(143.59885, 427.36218)

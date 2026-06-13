@@ -35,3 +35,22 @@ func play_jetpack():
 func play_resurrection():
 	if $ResurrectionSound:
 		$ResurrectionSound.play()
+
+# --- new music controls ---
+func stop_all_music():
+	$Area1Music.stop()
+	$Area2Music.stop()
+	$Area3Music.stop()
+	$Area4Music.stop()
+
+func play_area_music(area_number: int):
+	stop_all_music()
+	match area_number:
+		1:
+			$Area1Music.play()
+		2:
+			$Area2Music.play()
+		3:
+			$Area3Music.play()
+		4:
+			$Area4Music.play()

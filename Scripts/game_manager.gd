@@ -40,10 +40,21 @@ func load_area(area_number):
 	var instance = scene.instantiate()
 	area_container.add_child(instance)
 	reset_energy_cells()
+	# ✅ Special camera zoom if AreaSettings script exists in the are
+	if instance is Node2D and "camera_zoom" in instance:
+		var player = get_tree().get_first_node_in_group("player") as PlayerController
+		if player and player.camera:
+			player.camera.zoom = instance.camera_zoom
+
+	# ✅ Play level music here
+	var audio_manager = get_tree().get_first_node_in_group("audio_manager") as AudioManager
+	audio_manager.play_area_music(area_number)
+
 	#moving player to the star position of the new scene
 	var player_start_position = get_tree().get_first_node_in_group("player_start_position") as Node2D
 	player.teleport_to_location(player_start_position.position)
 	area_started.emit()
+
 	# jetpack activate area from 4
 	if area_number >= 4:
 		has_jetpack = true
