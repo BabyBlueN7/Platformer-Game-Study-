@@ -69,10 +69,10 @@ volume_db = -19.636
 
 [node name="Area3Music" type="AudioStreamPlayer" parent="AudioManager" unique_id=356139183]
 stream = ExtResource("14_decfu")
-volume_db = -18.909
+volume_db = -80.0
 
 [node name="Area4Music" type="AudioStreamPlayer" parent="AudioManager" unique_id=375121270]
 stream = ExtResource("15_p1ih8")
-volume_db = -28.364
+volume_db = -80.0
 
 [node name="Area" type="Node2D" parent="." unique_id=58399073 groups=["area_container"]]
